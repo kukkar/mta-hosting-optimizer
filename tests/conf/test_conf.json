@@ -1,0 +1,16 @@
+{
+    "MTAHostingOptimizer": {
+      "IPPort": "http://localhost:8085",
+      "Version" : "v1"
+    }, 
+    "Mysql" : {
+      "User" : "root",
+      "Password" : "Golang@1994",
+      "DbName" : "hostingoptimizer",
+      "MaxOpenConnections" : 10,
+      "MaxIdleConnections" : 3,
+      "Host" : "127.0.0.1",
+      "Port" : "3306",
+      "DefaultTimeZone" : "Asia/Jakarta"
+  }
+}

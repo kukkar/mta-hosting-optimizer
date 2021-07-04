@@ -1,10 +1,10 @@
-# Sending_blue_task
+# mta-hosting-optimizer
 
 
 ### Requirement
 We need go1.13 or greater
 ```
-go get github.com/kukkar/sendingbluetask
+go get github.com/kukkar/mta-hosting-optimizer
 ```
 
 
@@ -35,9 +35,9 @@ go get github.com/kukkar/sendingbluetask
 ### build
 
 - to build docker run
-    - sudo docker build -t sendingbluetask -f Dockerfile .
+    - sudo docker build -t mta-hosting-optimizer -f Dockerfile .
 - to run docker image
-    - docker run sendingbluetask
+    - docker run mta-hosting-optimizer
 - to run go  tests
     - go test ...
 

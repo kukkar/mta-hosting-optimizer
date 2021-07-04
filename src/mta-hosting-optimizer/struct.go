@@ -1,4 +1,4 @@
-package sendinbluetask
+package hostingoptimizer
 
 import "github.com/kukkar/common-golang/pkg/utils"
 

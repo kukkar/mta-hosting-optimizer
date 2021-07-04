@@ -1,4 +1,4 @@
-package sendinbluetask
+package hostingoptimizer
 
 import "errors"
 

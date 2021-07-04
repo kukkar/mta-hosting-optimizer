@@ -1,4 +1,4 @@
-package sendinbluetask
+package hostingoptimizer
 
 const (
 	testStorageAdapter = "mongo"

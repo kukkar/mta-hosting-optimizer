@@ -6,24 +6,14 @@ import (
 
 	"github.com/kukkar/common-golang/pkg/components/mongodb"
 	"github.com/kukkar/common-golang/pkg/config"
+
 	// "github.com/kukkar/common-golang/pkg/factory/cache"
-	// "github.com/kukkar/common-golang/pkg/factory/sql"
+	"github.com/kukkar/common-golang/pkg/factory/sql"
 )
 
 type AppConfig struct {
-	Mongo        *mongodb.MDBConfig `json:"Mongo,omitempty"`
-	ImageStorage struct {
-		Use   string
-		Local struct {
-			Path string
-		}
-		S3 struct {
-			BucketName string
-			Region     string
-			LogLevel   int
-		}
-	}
-	ImageViewURL string
+	Mongo *mongodb.MDBConfig `json:"Mongo,omitempty"`
+	MySql *sql.MysqlConfig   `json:"Mysql"`
 }
 
 func GetAppConfig() (*AppConfig, error) {
@@ -43,6 +33,6 @@ func GetGlobalConfig() (*config.AppConfig, error) {
 func EnvUpdateMap() map[string]string {
 	m := make(map[string]string)
 
-	m["Mongo.URL"] = "TIGERHALL_MONGO_URL"
+	m["Mongo.URL"] = "MTA_HOSTING_OPTIMIZER_MONGO_URL"
 	return m
 }

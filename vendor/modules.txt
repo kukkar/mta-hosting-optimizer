@@ -147,6 +147,7 @@ github.com/kukkar/common-golang/pkg/utils
 github.com/kukkar/common-golang/pkg/utils/aesencryption
 github.com/kukkar/common-golang/pkg/utils/clientvalidator
 github.com/kukkar/common-golang/pkg/utils/concurrenthashmap
+github.com/kukkar/common-golang/pkg/utils/depchecker
 github.com/kukkar/common-golang/pkg/utils/env
 github.com/kukkar/common-golang/pkg/utils/hashmac
 github.com/kukkar/common-golang/pkg/utils/hmacrequestgenerator
@@ -164,9 +165,6 @@ github.com/mattn/go-isatty
 github.com/modern-go/concurrent
 # github.com/modern-go/reflect2 v1.0.1
 github.com/modern-go/reflect2
-# github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
-## explicit
-github.com/nfnt/resize
 # github.com/pkg/errors v0.9.1
 github.com/pkg/errors
 # github.com/prometheus/procfs v0.0.3
@@ -174,7 +172,6 @@ github.com/prometheus/procfs
 github.com/prometheus/procfs/internal/fs
 # github.com/sanksons/gowraps v0.0.0-20190222131244-8574ba0bf631
 ## explicit
-github.com/sanksons/gowraps/filesystem
 github.com/sanksons/gowraps/imaging
 # github.com/santhosh-tekuri/jsonschema v1.2.4
 github.com/santhosh-tekuri/jsonschema
@@ -351,11 +348,7 @@ google.golang.org/protobuf/reflect/protoreflect
 google.golang.org/protobuf/reflect/protoregistry
 google.golang.org/protobuf/runtime/protoiface
 google.golang.org/protobuf/runtime/protoimpl
-# gopkg.in/go-playground/validator.v9 v9.31.0
-## explicit
-gopkg.in/go-playground/validator.v9
 # gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
-## explicit
 gopkg.in/mgo.v2/bson
 gopkg.in/mgo.v2/internal/json
 # gopkg.in/yaml.v2 v2.3.0

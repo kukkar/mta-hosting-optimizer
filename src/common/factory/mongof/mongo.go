@@ -6,7 +6,7 @@ import (
 
 	"github.com/kukkar/common-golang/pkg/components/mongodb"
 	concurrenthashmap "github.com/kukkar/common-golang/pkg/utils/concurrenthashmap"
-	appConf "github.com/kukkar/tigerhall-kittens/conf"
+	appConf "github.com/kukkar/mta-hosting-optimizer/conf"
 )
 
 var ErrNotFound = errors.New("not found")

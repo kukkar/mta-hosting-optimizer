@@ -1,9 +1,9 @@
 {
-    "AppName" : "mta-hosting-optimizer",
+    "AppName" : "mtahostingoptimizer",
     "AppVersion" : "1.0",
-    "ServerHost" : "localhost",
+    "ServerHost" : "0.0.0.0",
     "ServerPort" : "8085",
-    "Environment" : "local",
+    "Environment" : "prod",
     "SuperKey" : "dRgUkXp2s5u8x/A?D(G+KbPeShVmYq3t",
     "LogConfig" : {
         "Level": 0,
@@ -17,12 +17,23 @@
         "Mysql" : {
             "User" : "root",
             "Password" : "Golang@1994",
-            "DbName" : "hostingoptimizer",
+            "DbName" : "merchant",
             "MaxOpenConnections" : 10,
             "MaxIdleConnections" : 3,
             "Host" : "127.0.0.1",
             "Port" : "3306",
             "DefaultTimeZone" : "Europe/Paris"
+        },
+        "ImageStorage": {
+            "Use": "Local",
+            "Local": {
+                "Path": "/tmp/data/imageprocessing"
+            },
+            "S3": {
+                "BucketName": "test",
+                "Region": "",
+                "LogLevel": 0
+            }
         },
         "Cache" : {
             "Use" : "redis",
@@ -33,8 +44,7 @@
         },
         "Mongo" : {
             "URL": "mongodb://localhost:27017",
-            "DbName" : "hostingoptimizer"
-        },
-        "SentryDSN" : "https://829d394c3ec84a7fbba55e1910a87816@sentry.bharatpe.in/39"
+            "DbName" : "tiberhall"
+        }
     }
 }

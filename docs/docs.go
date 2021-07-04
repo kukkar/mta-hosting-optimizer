@@ -30,53 +30,17 @@ var doc = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/v1/createtiger": {
-            "post": {
-                "produces": [
-                    "application/json"
-                ],
-                "summary": "Createtiger create tiger in the wild",
-                "parameters": [
-                    {
-                        "description": "create tiger in wild",
-                        "name": "requesttiger",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/controllers.ReqCreateTiger"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/v1/listtigers": {
+        "/v1/listunusedhost": {
             "get": {
                 "produces": [
                     "application/json"
                 ],
-                "summary": "ListTigers list tigers with provided query feature",
+                "summary": "GetInefficientHosts get unused hosts on threshold",
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "q",
-                        "name": "q",
-                        "in": "query"
-                    },
-                    {
-                        "type": "string",
-                        "description": "limit",
-                        "name": "limit",
-                        "in": "query"
-                    },
-                    {
-                        "type": "string",
-                        "description": "page",
-                        "name": "page",
+                        "description": "threshhold",
+                        "name": "threshhold",
                         "in": "query"
                     }
                 ],
@@ -84,95 +48,7 @@ var doc = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/controllers.ResListTigers"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/listtigersights": {
-            "get": {
-                "produces": [
-                    "application/json"
-                ],
-                "summary": "ListTigerSight list tigers previous sights",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "limit",
-                        "name": "limit",
-                        "in": "query"
-                    },
-                    {
-                        "type": "string",
-                        "description": "page",
-                        "name": "page",
-                        "in": "query"
-                    },
-                    {
-                        "type": "string",
-                        "description": "id",
-                        "name": "id",
-                        "in": "query",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/controllers.ResListTigers"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/sighttiger": {
-            "post": {
-                "produces": [
-                    "application/json"
-                ],
-                "summary": "Createtiger create tiger in the wild",
-                "parameters": [
-                    {
-                        "description": "create sight of tiger in wild",
-                        "name": "requesttigersight",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/controllers.ReqSightATiger"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/v1/uploadimage": {
-            "post": {
-                "produces": [
-                    "application/json"
-                ],
-                "summary": "upload image add images in variations depending on requirement",
-                "parameters": [
-                    {
-                        "description": "upload a image",
-                        "name": "uploadimage",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/controllers.ReqUploadImage"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/controllers.ResUploadImage"
+                            "$ref": "#/definitions/controllers.ResUnusedIpHost"
                         }
                     }
                 }
@@ -180,109 +56,10 @@ var doc = `{
         }
     },
     "definitions": {
-        "controllers.Coordinates": {
+        "controllers.ResUnusedIpHost": {
             "type": "object",
             "properties": {
-                "lat": {
-                    "type": "number"
-                },
-                "long": {
-                    "type": "number"
-                }
-            }
-        },
-        "controllers.ImageInfo": {
-            "type": "object",
-            "properties": {
-                "data": {
-                    "type": "string"
-                },
-                "format": {
-                    "type": "string"
-                }
-            }
-        },
-        "controllers.ReqCreateTiger": {
-            "type": "object",
-            "properties": {
-                "coordinates": {
-                    "$ref": "#/definitions/controllers.Coordinates"
-                },
-                "dob": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                }
-            }
-        },
-        "controllers.ReqSightATiger": {
-            "type": "object",
-            "properties": {
-                "coordinates": {
-                    "$ref": "#/definitions/controllers.Coordinates"
-                },
-                "imagePath": {
-                    "description": "SeenAt      time.Time   ` + "`" + `json:\"seenAt\"` + "`" + `",
-                    "type": "string"
-                },
-                "tigerID": {
-                    "type": "string"
-                }
-            }
-        },
-        "controllers.ReqUploadImage": {
-            "type": "object",
-            "properties": {
-                "image": {
-                    "$ref": "#/definitions/controllers.ImageInfo"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "resource": {
-                    "type": "string"
-                },
-                "type": {
-                    "type": "string"
-                }
-            }
-        },
-        "controllers.ResListTigers": {
-            "type": "object",
-            "properties": {
-                "tigers": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/controllers.TigerData"
-                    }
-                },
-                "totalCount": {
-                    "type": "integer"
-                }
-            }
-        },
-        "controllers.ResUploadImage": {
-            "type": "object",
-            "properties": {
-                "imagePath": {
-                    "type": "string"
-                }
-            }
-        },
-        "controllers.TigerData": {
-            "type": "object",
-            "properties": {
-                "dob": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "seenAt": {
+                "host": {
                     "type": "string"
                 }
             }
@@ -303,10 +80,10 @@ type swaggerInfo struct {
 var SwaggerInfo = swaggerInfo{
 	Version:     "1.0",
 	Host:        "",
-	BasePath:    "/tigerhall/",
+	BasePath:    "/mta-hosting-optimizer/",
 	Schemes:     []string{},
-	Title:       "Merchant Swagger API",
-	Description: "Swagger API for tigerhall Project.",
+	Title:       "mta-hosting-optimizer Swagger API",
+	Description: "Swagger API for mta-hosting-optimizer Project.",
 }
 
 type s struct{}

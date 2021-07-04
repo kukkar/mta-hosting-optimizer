@@ -1,10 +1,10 @@
-# Tigerhall_Kittens
+# Sending_blue_task
 
 
 ### Requirement
 We need go1.13 or greater
 ```
-go get github.com/kukkar/tigerhall-kittens
+go get github.com/kukkar/sendingbluetask
 ```
 
 
@@ -35,9 +35,9 @@ go get github.com/kukkar/tigerhall-kittens
 ### build
 
 - to build docker run
-    - sudo docker build -t tigerhall -f Dockerfile .
+    - sudo docker build -t sendingbluetask -f Dockerfile .
 - to run docker image
-    - docker run tigerhall
+    - docker run sendingbluetask
 - to run go  tests
     - go test ...
 

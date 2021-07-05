@@ -1,0 +1,13 @@
+mode: set
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mysqlImpl.go:14.40,22.16 6 1
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mysqlImpl.go:25.2,25.18 1 1
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mysqlImpl.go:30.2,30.20 1 1
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mysqlImpl.go:22.16,24.3 1 0
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mysqlImpl.go:25.18,29.3 3 1
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mtaHostingOptimizerImpl.go:15.98,19.18 2 1
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mtaHostingOptimizerImpl.go:22.2,23.16 2 1
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mtaHostingOptimizerImpl.go:26.2,26.33 1 1
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mtaHostingOptimizerImpl.go:31.2,31.17 1 1
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mtaHostingOptimizerImpl.go:19.18,21.3 1 1
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mtaHostingOptimizerImpl.go:23.16,25.3 1 1
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mtaHostingOptimizerImpl.go:26.33,30.3 1 1

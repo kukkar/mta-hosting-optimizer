@@ -11,6 +11,7 @@ type DBResInactiveIpCount struct {
 	HostName string
 	IP       string
 }
+
 type Config struct {
 	StorageAdapter string
 	RC             utils.RequestContext

@@ -45,3 +45,10 @@ go get github.com/kukkar/mta-hosting-optimizer
 - http://localhost:8085/swagger/index.html
     
 
+
+### Code Coverage
+go tool cover -func=coverage.out
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mtaHostingOptimizerImpl.go:15: GetInefficientHosts      100.0%
+github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer/mysqlImpl.go:13:               getInactiveIPHosts       91.7%
+total:                                                                                           (statements)             95.2%
+admin@admins-MacBook-Pro mta-hosting-optimizer % 

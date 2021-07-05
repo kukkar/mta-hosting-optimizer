@@ -12,8 +12,9 @@ import (
 )
 
 type AppConfig struct {
-	Mongo *mongodb.MDBConfig `json:"Mongo,omitempty"`
-	MySql *sql.MysqlConfig   `json:"Mysql"`
+	Mongo                  *mongodb.MDBConfig `json:"Mongo,omitempty"`
+	MySql                  *sql.MysqlConfig   `json:"Mysql"`
+	ActiveIPCountThreshold int                `json:"ActiveIPCountThreshold"`
 }
 
 func GetAppConfig() (*AppConfig, error) {

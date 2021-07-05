@@ -1,14 +1,13 @@
 package controllers
 
 import (
-	"strconv"
-
 	"github.com/kukkar/common-golang/globalconst"
 
 	"github.com/gin-gonic/gin"
 	"github.com/kukkar/common-golang/pkg/responsewriter"
 	"github.com/kukkar/common-golang/pkg/utils"
 	"github.com/kukkar/common-golang/pkg/utils/rError"
+	appConf "github.com/kukkar/mta-hosting-optimizer/conf"
 	bl "github.com/kukkar/mta-hosting-optimizer/src/mta-hosting-optimizer"
 )
 
@@ -32,14 +31,14 @@ func GetInefficientHosts(c *gin.Context) {
 			RC:             rc,
 		})
 
-	sThreshold := c.Query(queryParamThreshold)
-
-	threshhold, err := strconv.Atoi(sThreshold)
+	appConfig, err := appConf.GetAppConfig()
 	if err != nil {
-		err = rError.MiscError(c, err, "Invalid threshold value")
+		err = rError.MiscError(c, err, "unable to load config")
 		responsewriter.BuildResponse(c, "", err)
 		return
 	}
+
+	threshhold := appConfig.ActiveIPCountThreshold
 
 	if err != nil {
 		err = rError.MiscError(c, err, "Unable to get instance")

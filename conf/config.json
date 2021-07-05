@@ -35,6 +35,6 @@
             "URL": "mongodb://localhost:27017",
             "DbName" : "hostingoptimizer"
         },
-        "SentryDSN" : "https://829d394c3ec84a7fbba55e1910a87816@sentry.bharatpe.in/39"
+        "ActiveIPCountThreshold" : 2
     }
 }

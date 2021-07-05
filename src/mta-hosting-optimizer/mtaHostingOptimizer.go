@@ -1,3 +1,5 @@
+//+build !test
+
 package hostingoptimizer
 
 import (
@@ -26,13 +28,6 @@ func getStorageAdapter(key string,
 	switch stAdapter {
 	case StInMemory:
 	case StMongo:
-		md, err := getMongoAdapater(key)
-		if err != nil {
-			return nil, err
-		}
-		return &mongoAdapter{
-			md,
-		}, nil
 	case StMysql:
 		msql, err := getMysqlAdapter("")
 		if err != nil {
@@ -43,13 +38,6 @@ func getStorageAdapter(key string,
 		}, nil
 	}
 	return nil, fmt.Errorf("wrong choice of Adapter")
-}
-
-func getMongoAdapater(key string) (*mfactory.MDB, error) {
-	if key == "" {
-		key = mfactory.DEFAULT_KEY
-	}
-	return mfactory.GetPool(key)
 }
 
 func getMysqlAdapter(key string) (*sql.MysqlPool, error) {
